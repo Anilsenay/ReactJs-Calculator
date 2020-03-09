@@ -49,21 +49,23 @@ export default function Screen() {
     let getResult = () => {
         if(value !== ""){
             if(operation === "addition"){
-                setValue("=" + (parseFloat(oldValue) + parseFloat(value)))
+                console.log(value + " " + oldValue)
+                setValue("=" + (parseFloat(oldValue.replace('=', '')) + parseFloat(value)))
             }
             else if(operation === "substract"){
-                setValue("=" + (parseFloat(oldValue) - parseFloat(value)))
+                setValue("=" + (parseFloat(oldValue.replace('=', '')) - parseFloat(value)))
             }
             else if(operation === "multiply"){
-                setValue("=" + (parseFloat(oldValue) * parseFloat(value)))
+                setValue("=" + (parseFloat(oldValue.replace('=', '')) * parseFloat(value)))
             }
             else if(operation === "divide"){
-                setValue("=" + (parseFloat(oldValue) / parseFloat(value)))
+                setValue("=" + (parseFloat(oldValue.replace('=', '')) / parseFloat(value)))
             }
             setOperation("equal")
         }
     }
-
+    let test = "=22"
+    console.log(parseFloat(test) ? "test":parseFloat(test.substring(1, test.length)))
     return (
         <div>
             <div className="screen">
