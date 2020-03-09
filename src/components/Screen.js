@@ -47,19 +47,21 @@ export default function Screen() {
     }
 
     let getResult = () => {
-        if(operation === "addition"){
-            setValue("=" + (parseFloat(oldValue) + parseFloat(value)))
+        if(value !== ""){
+            if(operation === "addition"){
+                setValue("=" + (parseFloat(oldValue) + parseFloat(value)))
+            }
+            else if(operation === "substract"){
+                setValue("=" + (parseFloat(oldValue) - parseFloat(value)))
+            }
+            else if(operation === "multiply"){
+                setValue("=" + (parseFloat(oldValue) * parseFloat(value)))
+            }
+            else if(operation === "divide"){
+                setValue("=" + (parseFloat(oldValue) / parseFloat(value)))
+            }
+            setOperation("equal")
         }
-        else if(operation === "substract"){
-            setValue("=" + (parseFloat(oldValue) - parseFloat(value)))
-        }
-        else if(operation === "multiply"){
-            setValue("=" + (parseFloat(oldValue) * parseFloat(value)))
-        }
-        else if(operation === "divide"){
-            setValue("=" + (parseFloat(oldValue) / parseFloat(value)))
-        }
-        setOperation("equal")
     }
 
     return (
