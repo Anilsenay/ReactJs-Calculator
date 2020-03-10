@@ -75,7 +75,7 @@ export default function Screen() {
                 <div className="key key-clear" onClick={() => clear()}>C</div>
                 <div className="key letter" onClick={() => divide()}>/</div>
                 <div className="key letter" onClick={() => multiply()}>*</div>
-                <div className="key key-backspace" onClick={() => backspace()}><i class="fas fa-backspace"></i></div>
+                <div className="key key-backspace" onClick={() => backspace()}><i className="fas fa-backspace"></i></div>
                 <div className="key letter" onClick={() => writeToScreen(7)}>7</div>
                 <div className="key letter" onClick={() => writeToScreen(8)}>8</div>
                 <div className="key letter" onClick={() => writeToScreen(9)}>9</div>
