@@ -10,7 +10,7 @@
   text-align: right;
   display: inline-block;
   margin:auto;
-  width: 25%;
+  width: 7em;
   resize: none;
   background: linear-gradient(145deg, #F2F7FB, #E9F2FB);
   box-shadow:  inset 8px 8px 15px #D9E3EC;
@@ -99,10 +99,12 @@
   border-radius: 12px;
   border: none;
   overflow: hidden;
-  padding: 20px;
   outline: none;
   font-size: 28pt;
   text-align: end;
   vertical-align: middle;
 }
 
+.calculator-area{
+  display: inline-block;
+}

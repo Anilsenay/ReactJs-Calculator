@@ -72,7 +72,7 @@ export default function Calculator() {
     }
     
     return (
-        <div>
+        <div className="calculator-area">
             <ResultScreen value={value}/>
             <div className="buttons-grid">
                 <Key text="C" type="clear" onClick={clear}/>
