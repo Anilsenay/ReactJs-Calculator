@@ -65,7 +65,7 @@ export default function Screen() {
         }
     }
     let test = "=22"
-    console.log(parseFloat(test) ? "test":parseFloat(test.substring(1, test.length)))
+    /*console.log(parseFloat(test) ? "test":parseFloat(test.substring(1, test.length)))*/
     return (
         <div>
             <div className="screen">
