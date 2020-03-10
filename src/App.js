@@ -1,12 +1,11 @@
 import React from 'react';
 import './App.css';
-import Screen from './components/Screen'
-import Buttons from './components/Buttons';
+import Calculator from './components/Calculator'
 
 function App() {
   return (
     <div className="container">
-      <Screen/>
+      <Calculator/>
       
     </div>
   );

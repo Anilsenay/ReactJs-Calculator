@@ -1,6 +1,8 @@
 import React, {useState} from 'react'
+import ResultScreen from './ResultScreen';
+import Key from './Key'
 
-export default function Screen() {
+export default function Calculator() {
 
     const [oldValue, setOldValue] = useState("");
     const [value, setValue] = useState("");
@@ -12,6 +14,10 @@ export default function Screen() {
             setOperation("")
         }else
         setValue(value + "" + number)
+    }
+
+    let writeDot = () => {
+        writeToScreen(".")
     }
 
     let add = () => {
@@ -64,33 +70,30 @@ export default function Screen() {
             setOperation("equal")
         }
     }
-    let test = "=22"
-    /*console.log(parseFloat(test) ? "test":parseFloat(test.substring(1, test.length)))*/
+    
     return (
         <div>
-            <div className="screen">
-                <textarea className="screen-text" value={value}></textarea>
-            </div>
+            <ResultScreen value={value}/>
             <div className="buttons-grid">
-                <div className="key key-clear" onClick={() => clear()}>C</div>
-                <div className="key letter" onClick={() => divide()}>/</div>
-                <div className="key letter" onClick={() => multiply()}>*</div>
-                <div className="key key-backspace" onClick={() => backspace()}><i className="fas fa-backspace"></i></div>
-                <div className="key letter" onClick={() => writeToScreen(7)}>7</div>
-                <div className="key letter" onClick={() => writeToScreen(8)}>8</div>
-                <div className="key letter" onClick={() => writeToScreen(9)}>9</div>
-                <div className="key letter" onClick={() => percent()}>%</div>
-                <div className="key letter" onClick={() => writeToScreen(4)}>4</div>
-                <div className="key letter" onClick={() => writeToScreen(5)}>5</div>
-                <div className="key letter" onClick={() => writeToScreen(6)}>6</div>
-                <div className="key letter" onClick={() => substract()}>-</div>
-                <div className="key letter" onClick={() => writeToScreen(1)}>1</div>
-                <div className="key letter" onClick={() => writeToScreen(2)}>2</div>
-                <div className="key letter" onClick={() => writeToScreen(3)}>3</div>
-                <div className="key letter" onClick={() => add()}>+</div>
-                <div className="key letter" onClick={() => writeToScreen(0)}>0</div>
-                <div className="key letter" onClick={() => writeToScreen(".")}>.</div>
-                <div className="key  key-equal " id="equal" onClick={() => getResult()}>=</div>
+                <Key text="C" type="clear" onClick={clear}/>
+                <Key text="/" type="letter" onClick={divide}/>
+                <Key text="*" type="letter" onClick={multiply}/>
+                <Key text={<i className="fas fa-backspace"></i>} type="backspace" onClick={backspace}/>
+                <Key text="7" type="letter" onClick={writeToScreen}/>
+                <Key text="8" type="letter" onClick={writeToScreen}/>
+                <Key text="9" type="letter" onClick={writeToScreen}/>
+                <Key text="%" type="letter" onClick={percent}/>
+                <Key text="4" type="letter" onClick={writeToScreen}/>
+                <Key text="5" type="letter" onClick={writeToScreen}/>
+                <Key text="6" type="letter" onClick={writeToScreen}/>
+                <Key text="-" type="letter" onClick={substract}/>
+                <Key text="1" type="letter" onClick={writeToScreen}/>
+                <Key text="2" type="letter" onClick={writeToScreen}/>
+                <Key text="3" type="letter" onClick={writeToScreen}/>
+                <Key text="+" type="letter" onClick={add}/>
+                <Key text="0" type="letter" onClick={writeToScreen}/>
+                <Key text="." type="letter" onClick={writeDot}/>
+                <Key text="=" type="equal" onClick={getResult}/>
             </div>
         </div>
     )
